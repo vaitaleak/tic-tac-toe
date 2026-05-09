@@ -1,5 +1,5 @@
 {
-  "name": "Tic Tac Toe",
+  "name": "tictactoe",
   "displayName": "Tic Tac Toe",
   "android": {
     "package": "com.usefullapps.tictactoe"
