@@ -1,7 +1,11 @@
 module.exports = {
   project: {
     android: {
-      unstable_reactLegacyComponentNames: ['RCTImageView'],
+      packageName: 'com.usefullapps.tictactoe',
+      sourceDir: './android',
+      appName: 'tictactoe',
+      manifestPath: './app/src/main/AndroidManifest.xml',
     },
+    ios: {},
   },
 };
