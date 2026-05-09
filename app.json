@@ -1,7 +1,21 @@
 {
-  "name": "tictactoe",
-  "displayName": "Tic Tac Toe",
-  "android": {
-    "package": "com.usefullapps.tictactoe"
+  "expo": {
+    "name": "Tic Tac Toe",
+    "slug": "tic-tac-toe",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.usefullapps.tictactoe",
+      "versionCode": 1
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
