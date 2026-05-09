@@ -13,9 +13,6 @@
       },
       "package": "com.usefullapps.tictactoe",
       "versionCode": 1
-    },
-    "plugins": [
-      "expo-router"
-    ]
+    }
   }
 }
