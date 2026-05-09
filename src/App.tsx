@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import {
   StyleSheet, View, Text, TouchableOpacity, Dimensions,
   SafeAreaView,
@@ -75,9 +75,10 @@ export default function App() {
   const [mode, setMode] = useState<'easy' | 'hard' | '2p'>('hard');
 
   const gameOver = winLine !== null || draw;
+  const aiThinking = useRef(false);
 
   const handleCell = useCallback((idx: number) => {
-    if (board[idx] || gameOver) return;
+    if (board[idx] || gameOver || aiThinking.current) return;
     const current = xTurn ? 'X' : 'O';
 
     // In 1P mode, X is player, O is AI
@@ -99,8 +100,9 @@ export default function App() {
     const next = !xTurn;
     setXTurn(next);
 
-    // AI move
-    if (mode !== '2p' && next) {
+    // AI move (next is O's turn; condition should trigger when it's O's turn)
+    if (mode !== '2p' && !next) {
+      aiThinking.current = true;
       setTimeout(() => {
         const aiBoard = [...nb];
         let move: number;
@@ -122,6 +124,7 @@ export default function App() {
           }
         }
         setXTurn(true);
+        aiThinking.current = false;
       }, 300);
     }
   }, [board, xTurn, gameOver, mode]);
@@ -131,6 +134,7 @@ export default function App() {
     setXTurn(true);
     setWinLine(null);
     setDraw(false);
+    aiThinking.current = false;
   }, []);
 
   const resetAll = useCallback(() => {
