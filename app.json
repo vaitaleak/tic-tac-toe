@@ -1,12 +1,7 @@
 {
-  "expo": {
-    "name": "Tic Tac Toe",
-    "slug": "tic-tac-toe",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "android": {
-      "package": "com.usefullapps.tictactoe",
-      "versionCode": 1
-    }
+  "name": "Tic Tac Toe",
+  "displayName": "Tic Tac Toe",
+  "android": {
+    "package": "com.usefullapps.tictactoe"
   }
 }
